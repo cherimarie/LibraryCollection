@@ -1,7 +1,7 @@
 <h2><%= @user.name %></h2>
 
 <div class="show">
-  <% if librarian_user? && !@user.identification %>
+  <% if librarian_user? && (!@user.identification || @user.identification.blank?) %>
     <p class= "highlighted_text">Before this patron can borrow books, you must check their identification and edit their profile to include it.</p>
   <% end %>
   <% if current_user == @user %>
@@ -12,11 +12,17 @@
   <p>name: <%= @user.name %></p>
   <p>phone: <%= @user.phone %></p>
   <p>address: <%= @user.address %></p>
+  <p>city: <%= @user.city %></p>
+  <p>state: <%= @user.state %></p>
+  <p>zip: <%= @user.zip %></p>
   <p>id: <%= @user.identification %></p>
   <% if current_user != @user %>
   <p>notes: <%= @user.notes %></p>
   <% end %>
   <p><%= "DO NOT LEND" if @user.do_not_lend %>
+  <% if librarian_user? && !@user.good_to_borrow? %>
+    <p class= "highlighted_text">This patron can not check out books at this time.</p>
+  <% end %>
 </div>
 
 <% if @user.good_to_borrow? && librarian_user? %>

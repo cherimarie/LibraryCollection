@@ -1,8 +1,8 @@
-<h2>Genre: <%= @genre.name %> <% if @genre.abbreviation then %> | <%= @genre.abbreviation%> <% end %></h2>
+<h2>Category: <%= @genre.name %> <% if @genre.abbreviation then %> | <%= @genre.abbreviation%> <% end %></h2>
 
 <% if admin_user? %>
-  <%= link_to "Edit Genre", edit_genre_path(@genre), class: "meh-btn right" %>
-  <%= link_to "Delete", genre_path(@genre), method: :delete, data: {confirm: "Are you sure you want to delete this genre?"}, class: "danger-btn right" %>
+  <%= link_to "Edit Category", edit_genre_path(@genre), class: "meh-btn right" %>
+  <%= link_to "Delete", genre_path(@genre), method: :delete, data: {confirm: "Are you sure you want to delete this category?"}, class: "danger-btn right" %>
 <% end %>
 
 <table class="index tablesorter">

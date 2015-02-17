@@ -24,6 +24,7 @@
   margin: 0.25rem;
   border: 1px solid $med;
   border-radius: 6px;
+  display: inline-block;
   &:hover {
     background: $dark;
     text-decoration: none;

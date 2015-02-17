@@ -17,7 +17,7 @@
     <tr>
       <td><%= role if role %></td>
       <td><%= link_to (u.name || "user"), user_path(u.id) %></td>
-      <td><%= u.sort_by %></td>
+      <td><%= u.pref_name %></td>
       <td><%= "*" if u.notes %></td>
       <td><%= "X" if u.do_not_lend %></td>
       <td>

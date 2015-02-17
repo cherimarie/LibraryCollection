@@ -34,11 +34,17 @@ class User < ActiveRecord::Base
 
   def good_to_borrow?
     #organization-specific borrowing rules
-    self.name && (self.email || self.phone) && self.identification && !self.do_not_lend && self.loans.active.count < 5
+    self.name && (self.email || self.phone) && (self.identification && !self.identification.blank?) && !self.do_not_lend && self.loans.active.count < 5
   end
 
   def pref_name
     preferred_first_name || name.split.first
   end
 
+  def self.search(search)
+    search_length = search.split.length
+    where([(['lower(preferred_first_name) LIKE lower(?)'] * search_length).join(' AND ')] + search.split.map { |search| "%#{search}%" }) +
+    where([(['lower(name) LIKE lower(?)'] * search_length).join(' AND ')] + search.split.map { |search| "%#{search}%" })
+
+  end
 end

@@ -25,7 +25,7 @@ class BookUploadsController < ApplicationController
         redirect_to new_book_upload_path
       end
     else
-      flash[:alert] = "Please select a file and genre"
+      flash[:alert] = "Please select a file and category"
       redirect_to new_book_upload_path
     end
   end

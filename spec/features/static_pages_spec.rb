@@ -6,7 +6,7 @@ describe 'Static Pages', type: feature do
   describe 'Home Page' do 
     before { visit root_path }
 
-    it 'has working genre link' do expect(subject).to have_link('by genre', href: genres_path) end
+    it 'has working genre link' do expect(subject).to have_link('by category', href: genres_path) end
     it 'has working author link' do expect(subject).to have_link('by author', href: authors_path) end
     it 'has working keyword link' do expect(subject).to have_link('by keyword', href: keywords_path) end
     it 'does not have admin links' do expect(subject).to_not have_link('dashboard') end
@@ -97,7 +97,7 @@ describe 'Static Pages', type: feature do
       describe 'links' do
         it 'has upload' do expect(subject).to have_link('Upload Books') end
         it 'has manage Books' do expect(subject).to have_link('Manage Books') end
-        it 'has manage Genres' do expect(subject).to have_link('Manage Genres') end
+        it 'has manage Genres' do expect(subject).to have_link('Manage Categories') end
         it 'has manage Authors' do expect(subject).to have_link('Manage Authors') end
         it 'has manage Keywords' do expect(subject).to have_link('Manage Keywords') end
         it 'has manage Users' do expect(subject).to have_link('Manage Users') end
@@ -138,7 +138,7 @@ describe 'Static Pages', type: feature do
       describe 'links' do
         it 'no upload' do expect(subject).to_not have_link('Upload Books') end
         it 'no manage Books' do expect(subject).to_not have_link('Manage Books') end
-        it 'no manage Genres' do expect(subject).to_not have_link('Manage Genres') end
+        it 'no manage Genres' do expect(subject).to_not have_link('Manage Categories') end
         it 'no manage Authors' do expect(subject).to_not have_link('Manage Authors') end
         it 'has manage Keywords' do expect(subject).to have_link('Manage Keywords') end
         it 'has manage Users' do expect(subject).to have_link('Manage Users') end

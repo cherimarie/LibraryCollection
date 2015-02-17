@@ -6,7 +6,7 @@
     	<%= f.text_field :title, disabled: disabled %>
     </fieldset>
     <fieldset>
-    	<%= f.label :genre %>
+    	<%= f.label :genre, "Category" %>
     	<%= f.select :genre_id, Genre.all.collect { |n| [n.name, n.id] }, {}, multiple: false, class: "chosen-select", disabled: disabled %>
     </fieldset>
     <fieldset>
@@ -17,6 +17,11 @@
     	<%= f.label :keyword %>
     	<%= f.select :keyword_ids, Keyword.all.collect { |k| [k.name, k.id] }, {}, multiple: true, class: "chosen-select" %>
     </fieldset>
+    <fieldset>
+        <%= f.label :location %>
+        <%= f.text_field :location %>
+    </fieldset>
 
-    <%= f.submit "submit", class: "" %>
+
+    <%= f.submit "submit" %>
 <% end %>

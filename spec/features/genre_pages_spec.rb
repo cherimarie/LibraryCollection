@@ -12,17 +12,17 @@ describe 'Genre Pages', type: feature do
     before do
       admin_login
       visit genre_path(genre)
-      click_on 'Edit Genre'
+      click_on 'Edit Category'
     end
 
-    it 'displays title' do expect(subject).to have_selector('h1', 'Edit Genre') end
+    it 'displays title' do expect(subject).to have_selector('h1', 'Edit Category') end
 
     context 'making changes' do
 
       before do
         admin_login
         visit genre_path(genre)
-        click_on 'Edit Genre'
+        click_on 'Edit Category'
         fill_in('Name', with: 'new genre')
         click_on 'submit'
       end
@@ -38,13 +38,13 @@ describe 'Genre Pages', type: feature do
     before do
       admin_login
       visit genres_path
-      click_on 'New Genre'
+      click_on 'New Category'
       fill_in('Name', with: 'newer genre')
       fill_in('Abbreviation', with: 'NG')
       click_on 'submit'
     end
 
-      it 'flashes success' do expect(subject).to have_content('Genre added') end
+      it 'flashes success' do expect(subject).to have_content('Category added') end
       it 'lists in index' do expect(subject).to have_content('newer genre') end
 
   end

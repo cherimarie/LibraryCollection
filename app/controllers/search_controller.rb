@@ -15,9 +15,10 @@ class SearchController < ApplicationController
       @books = Book.search(params[:search])
       @genres = Genre.search(params[:search])
       @keywords = Keyword.search(params[:search])
+      @users = User.search(params[:search]) if is_librarian?
     end
 
-    if @authors.blank? && @books.blank? && @genres.blank? && @keywords.blank?
+    if @authors.blank? && @books.blank? && @genres.blank? && @keywords.blank? && @users.blank?
       flash[:alert] = "Your search yielded no results."
     end
 

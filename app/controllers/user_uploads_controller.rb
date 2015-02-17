@@ -11,7 +11,7 @@ class UserUploadsController < ApplicationController
     @user_upload = UserUpload.new
   end
 
-  def create  
+  def create
     if UserUpload.import_requirements?(params)
       @user_upload = UserUpload.new(user_uploads_params)
       if @new_users = @user_upload.save

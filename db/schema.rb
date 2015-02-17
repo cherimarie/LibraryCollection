@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150103182654) do
+ActiveRecord::Schema.define(version: 20150128224244) do
 
   create_table "authors", force: true do |t|
     t.string   "name"
@@ -127,6 +127,9 @@ ActiveRecord::Schema.define(version: 20150103182654) do
     t.string   "identification"
     t.boolean  "do_not_lend"
     t.string   "username"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
   end
 
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

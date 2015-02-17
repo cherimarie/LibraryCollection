@@ -20,26 +20,41 @@
   </fieldset>
 
   <fieldset>
-    <%= f.label :password %>
+    <%= f.label :password, "New password" %>
     <%= f.password_field :password, autocomplete: "off" %>
     <small>leave blank if you don't want to change it</small>
   </fieldset>
 
   <fieldset>
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation, "New password confirmation" %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </fieldset>
 
   <br>
 
   <fieldset>
-    <%= f.label :name, "Full Legal Name" %>
+    <%= f.label :name, "Legal Name" %>
     <%= f.text_field :name, required: true  %>
   </fieldset>
 
   <fieldset>
     <%= f.label :address %>
     <%= f.text_field :address, required: true  %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
   </fieldset>
 
   <fieldset>

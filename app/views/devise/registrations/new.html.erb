@@ -18,29 +18,44 @@
   </fieldset>
 
   <fieldset>
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.label :password, "* Password" %>
+    <%= f.password_field :password, autocomplete: "off", required: true %>
   </fieldset>
 
   <fieldset>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.label :password_confirmation, "* Password confirmation" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", required: true %>
   </fieldset>
 
   <br>
 
   <fieldset>
-    <%= f.label :name, "Full Legal Name" %>
+    <%= f.label :name, "* Legal Name" %>
     <%= f.text_field :name, required: true  %>
   </fieldset>
 
   <fieldset>
-    <%= f.label :address, "Mailing Address" %>
+    <%= f.label :address, "* Mailing Address" %>
     <%= f.text_field :address, required: true  %>
   </fieldset>
 
   <fieldset>
-    <%= f.label :phone %>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :phone, "* Phone" %>
     <%= f.text_field :phone, required: true  %>
   </fieldset>
 

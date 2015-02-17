@@ -4,9 +4,10 @@
   <ul class="dashboard-links">
     <% if admin_user? %>
     <li><%= link_to "Upload Books From File", new_book_upload_path %></li>
+    <li><%= link_to "Upload Users From File", new_user_upload_path %></li>
     <li><%= link_to "Import Books From Web", import_path %></li>
     <li><%= link_to "Manage Books", books_path %></li>
-    <li><%= link_to "Manage Genres", genres_path %></li>
+    <li><%= link_to "Manage Categories", genres_path %></li>
     <li><%= link_to "Manage Authors", authors_path %></li>
     <% end %>
     <li><%= link_to "Manage Keywords", keywords_path %></li>

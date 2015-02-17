@@ -15,27 +15,27 @@ Ruby 2.0.0
 
 ###To see test coverage via SimpleCov gem:
   - run all tests via 'rake'
-  - in a browser, open LibraryCollection/coverage/index.html 
+  - in a browser, open LibraryCollection/coverage/index.html
 
 
 #v1
 ###public user can:
 
- - view library info on homepage 
+ - view library info on homepage
  - browse collection by author
- - browse collection by genre
- - search collection by genre, author, or title 
+ - browse collection by genre/category
+ - search collection by genre/category, author, or title
  - contact librarians
 
 ###admin can:
 
- - log in to view admin dashboard 
- - upload a file (export from previous cataloguing system) of books to be entered into collection 
+ - log in to view admin dashboard
+ - upload a file (export from previous cataloguing system) of books to be entered into collection
 
 
 #v2
 
-###admin can: 
+###admin can:
 
  - manage collection with CRUD capabilities for all items
  - enter the ISBN of a new item and get details for it via scrape process
@@ -43,25 +43,25 @@ Ruby 2.0.0
 
 #v3 : Full library management app!
 
-###public user can: 
+###public user can:
 
  - see if a book is available to check out
 
 ###patron can:
 
- - log in to view their borrowing history 
- - put an available book on hold 
+ - log in to view their borrowing history
+ - put an available book on hold
 
 ###librarian can:
 
  - log in to view librarian dashboard
  - create patron accounts (for borrowing & using the app)
- - check books in/out to patrons 
+ - check books in/out to patrons
  - view borrowing history of collection items
- - view borrowing history of each patron 
- - generate reports from borrowing data 
+ - view borrowing history of each patron
+ - generate reports from borrowing data
 
-###admin can: 
+###admin can:
 
  - create librarian accounts
 

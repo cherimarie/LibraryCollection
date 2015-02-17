@@ -2,7 +2,8 @@
 .main {
 		height: 100%;
 	  max-height:100%;
-	  overflow: auto;
+	  overflow-y: auto;
+	  overflow-x: hidden;
 	  padding-top: 2em;
 	  background: $light_gray;
 		}
@@ -15,17 +16,19 @@ img {
 
 h1 {
 		color: $dark_gray;
-		font-size: 4.5em;
+		font-size: 4em;
 		text-align: center;
 		text-transform: none;
 		}
 
 h2 {
-		font-size: 2.5em;
+		font-size: 2em;
 		color: $med_gray;
 		text-transform: none;
 		}
-
+h3 {
+	font-size: 1em;
+}
 .ignore-caps {
 	text-transform: none;
 }

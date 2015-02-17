@@ -21,13 +21,13 @@ class GenresController < ApplicationController
     if @genre.save
       respond_to do |format|
         format.html do
-            flash[:notice] = "Genre added"
+            flash[:notice] = "Category added"
             redirect_to genres_path
         end
         format.js {}
       end
     else
-      flash[:error] = "Genre failed to save"
+      flash[:error] = "Category failed to save"
       redirect_to new_genre_path
     end
   end

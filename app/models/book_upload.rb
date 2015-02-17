@@ -15,7 +15,6 @@ class BookUpload < ActiveRecord::Base
                         genre:  Genre.find_by_name(genre),
                         publisher: book_data["publisher"],
                         publish_date:  book_data["publish date"],
-                        publication_place:  book_data["publication place"],
                         isbn: book_data["isbn"])
     
     @new_objects << book.id

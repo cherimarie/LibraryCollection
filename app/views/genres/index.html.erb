@@ -1,12 +1,12 @@
-<h2>Genres</h2>
+<h2>Category</h2>
 <% if admin_user? %>
-  <%= link_to "New Genre", new_genre_path, class: "go-btn right" %>
+  <%= link_to "New Category", new_genre_path, class: "go-btn right" %>
 <% end %>
 
 <table class="index tablesorter">
   <thead>
     <tr>
-      <th>Genre Name</th>
+      <th>Category Name</th>
       <th>Number of Books</th>
     </tr>
   </thead>
@@ -18,7 +18,7 @@
       <% if admin_user? %>
         <td>
           <%= link_to "edit", edit_genre_path(g) %>
-          <%= link_to "delete", genre_path(g), method: :delete, data: {confirm: "Are you sure you want to delete this genre?"} %>
+          <%= link_to "delete", genre_path(g), method: :delete, data: {confirm: "Are you sure you want to delete this category?"} %>
         </td>
       <% end %>
     </tr>

@@ -1,0 +1,842 @@
+/*************
+Metro Dark Theme
+*************/
+/* overall */
+
+.tablesorter-metro-dark {
+	width: 100%;
+	font: 12px/18px 'Segoe UI Semilight', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+	color: #000;
+	background-color: #333;
+	border-spacing: 0;
+	margin: 10px 0 15px;
+	text-align: left;
+}
+
+.tablesorter-metro-dark tr.dark-row th, .tablesorter-metro-dark tr.dark-row td, .tablesorter-metro-dark caption.dark-row {
+	background-color: #222;
+	color: #fff;
+	padding: 2px;
+	text-align: left;
+	font-size: 14px;
+}
+
+/* header/footer */
+.tablesorter-metro-dark caption,
+.tablesorter-metro-dark th,
+.tablesorter-metro-dark thead td,
+.tablesorter-metro-dark tfoot th,
+.tablesorter-metro-dark tfoot td {
+	font-weight: 300;
+	font-size: 15px;
+	color: #ddd;
+	background-color: #333;
+	padding: 4px;
+}
+
+.tablesorter-metro-dark .header,
+.tablesorter-metro-dark .tablesorter-header {
+	background-image: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQBAMAAADQT4M0AAAAGFBMVEUAAADu7u7u7u7u7u7u7u7u7u7u7u7u7u5jNePWAAAACHRSTlMAMxIHKwEgMWD59H4AAABSSURBVAjXY2BgYFJgAAHzYhDJ6igSAKTYBAUTgJSioKAQAwNzoaCguAFDiCAQuDIkgigxBgiA8cJAVCpQt6AgSL+JoKAzA0gjUBsQqBcBCYhFAAE/CV4zeSzxAAAAAElFTkSuQmCC);
+	background-position: right 5px center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	white-space: normal;
+}
+.tablesorter-metro-dark .tablesorter-header-inner {
+	padding: 0 18px 0 4px;
+}
+.tablesorter-metro-dark thead .headerSortUp,
+.tablesorter-metro-dark thead .tablesorter-headerSortUp,
+.tablesorter-metro-dark thead .tablesorter-headerAsc {
+	background-image: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQBAMAAADQT4M0AAAAIVBMVEUAAADu7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u5meJAOAAAACnRSTlMAMwsqXt+gIBUGxGoDMAAAAFlJREFUCNctzC0SQAAUReEzGNQ3AlHRiSRZFCVZYgeswRL8hLdK7834wj3tAlGP6y7fYHpKS6w6WwbVG0I1NZVnZPG8/DYxOYlnhUYkA06R1s9ESsxR4NIdPhkPFDFYuEnMAAAAAElFTkSuQmCC);
+}
+.tablesorter-metro-dark thead .headerSortDown,
+.tablesorter-metro-dark thead .tablesorter-headerSortDown,
+.tablesorter-metro-dark thead .tablesorter-headerDesc {
+	background-image: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQBAMAAADQT4M0AAAALVBMVEUAAADu7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7i0NViAAAADnRSTlMAMiweCQITTvDctZZqaTlM310AAABcSURBVAjXY2BgYEtgAAFHERDJqigUAKSYBQUNgFSioKAYAwOLIBA4MASBKFUGQxAlzAAF+94BwWuGKBC1lIFl3rt3Lx0YGCzevWsGSjK9e6cAUlT3HKyW9wADAwDRrBiDy6bKzwAAAABJRU5ErkJggg==);
+}
+.tablesorter-metro-dark thead .sorter-false {
+	background-image: none;
+	cursor: default;
+	padding: 4px;
+}
+
+/* tbody */
+.tablesorter-metro-dark td {
+	background-color: #fff;
+	padding: 4px;
+	vertical-align: top;
+}
+
+/* hovered row colors */
+.tablesorter-metro-dark tbody > tr:hover > td,
+.tablesorter-metro-dark tbody > tr.even:hover > td,
+.tablesorter-metro-dark tbody > tr.odd:hover > td {
+	background: #bbb;
+	color: #000;
+}
+
+/* table processing indicator */
+.tablesorter-metro-dark .tablesorter-processing {
+	background-position: center center !important;
+	background-repeat: no-repeat !important;
+	/* background-image: url(../addons/pager/icons/loading.gif) !important; */
+	background-image: url(data:image/gif;base64,R0lGODlhFAAUAKEAAO7u7lpaWgAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQBCgACACwAAAAAFAAUAAACQZRvoIDtu1wLQUAlqKTVxqwhXIiBnDg6Y4eyx4lKW5XK7wrLeK3vbq8J2W4T4e1nMhpWrZCTt3xKZ8kgsggdJmUFACH5BAEKAAIALAcAAAALAAcAAAIUVB6ii7jajgCAuUmtovxtXnmdUAAAIfkEAQoAAgAsDQACAAcACwAAAhRUIpmHy/3gUVQAQO9NetuugCFWAAAh+QQBCgACACwNAAcABwALAAACE5QVcZjKbVo6ck2AF95m5/6BSwEAIfkEAQoAAgAsBwANAAsABwAAAhOUH3kr6QaAcSrGWe1VQl+mMUIBACH5BAEKAAIALAIADQALAAcAAAIUlICmh7ncTAgqijkruDiv7n2YUAAAIfkEAQoAAgAsAAAHAAcACwAAAhQUIGmHyedehIoqFXLKfPOAaZdWAAAh+QQFCgACACwAAAIABwALAAACFJQFcJiXb15zLYRl7cla8OtlGGgUADs=) !important;
+}
+
+/* pager */
+.tablesorter-metro-dark .tablesorter-pager button {
+	background-color: #444;
+	color: #eee;
+	border: #555 1px solid;
+	cursor: pointer;
+}
+.tablesorter-metro-dark .tablesorter-pager button:hover {
+	background-color: #555;
+}
+
+/* Zebra Widget - row alternating colors */
+.tablesorter-metro-dark tr.odd > td {
+	background-color: #eee;
+}
+.tablesorter-metro-dark tr.even > td {
+	background-color: #fff;
+}
+
+/* Column Widget - column sort colors */
+.tablesorter-metro-dark tr.odd td.primary {
+	background-color: #bfbfbf;
+}
+.tablesorter-metro-dark td.primary,
+.tablesorter-metro-dark tr.even td.primary {
+	background-color: #d9d9d9;
+}
+.tablesorter-metro-dark tr.odd td.secondary {
+	background-color: #d9d9d9;
+}
+.tablesorter-metro-dark td.secondary,
+.tablesorter-metro-dark tr.even td.secondary {
+	background-color: #e6e6e6;
+}
+.tablesorter-metro-dark tr.odd td.tertiary {
+	background-color: #e6e6e6;
+}
+.tablesorter-metro-dark td.tertiary,
+.tablesorter-metro-dark tr.even td.tertiary {
+	background-color: #f2f2f2;
+}
+
+/* filter widget */
+.tablesorter-metro-dark .tablesorter-filter-row td {
+	background: #eee;
+	line-height: normal;
+	text-align: center; /* center the input */
+	-webkit-transition: line-height 0.1s ease;
+	-moz-transition: line-height 0.1s ease;
+	-o-transition: line-height 0.1s ease;
+	transition: line-height 0.1s ease;
+}
+/* optional disabled input styling */
+.tablesorter-metro-dark .tablesorter-filter-row .disabled {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	cursor: not-allowed;
+}
+/* hidden filter row */
+.tablesorter-metro-dark .tablesorter-filter-row.hideme td {
+	/*** *********************************************** ***/
+	/*** change this padding to modify the thickness     ***/
+	/*** of the closed filter row (height = padding x 2) ***/
+	padding: 2px;
+	/*** *********************************************** ***/
+	margin: 0;
+	line-height: 0;
+	cursor: pointer;
+}
+.tablesorter-metro-dark .tablesorter-filter-row.hideme * {
+	height: 1px;
+	min-height: 0;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	/* don't use visibility: hidden because it disables tabbing */
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+/* filters */
+.tablesorter-metro-dark .tablesorter-filter {
+	width: 95%;
+	height: auto;
+	margin: 4px;
+	padding: 4px;
+	background-color: #fff;
+	border: 1px solid #bbb;
+	color: #333;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: height 0.1s ease;
+	-moz-transition: height 0.1s ease;
+	-o-transition: height 0.1s ease;
+	transition: height 0.1s ease;
+}
+/* rows hidden by filtering (needed for child rows) */
+.tablesorter .filtered {
+	display: none;
+}
+
+/* ajax error row */
+.tablesorter .tablesorter-errorRow td {
+	text-align: center;
+	cursor: pointer;
+	background-color: #e6bf99;
+}
+/* Chosen v1.2.0 | (c) 2011-2014 by Harvest | MIT License, https://github.com/harvesthq/chosen/blob/master/LICENSE.md */
+
+
+.chosen-container{position:relative;display:inline-block;vertical-align:middle;font-size:13px;zoom:1;*display:inline;-webkit-user-select:none;-moz-user-select:none;user-select:none}.chosen-container *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.chosen-container .chosen-drop{position:absolute;top:100%;left:-9999px;z-index:1010;width:100%;border:1px solid #aaa;border-top:0;background:#fff;box-shadow:0 4px 5px rgba(0,0,0,.15)}.chosen-container.chosen-with-drop .chosen-drop{left:0}.chosen-container a{cursor:pointer}.chosen-container-single .chosen-single{position:relative;display:block;overflow:hidden;padding:0 0 0 8px;height:25px;border:1px solid #aaa;border-radius:5px;background-color:#fff;background:-webkit-gradient(linear,50% 0,50% 100%,color-stop(20%,#fff),color-stop(50%,#f6f6f6),color-stop(52%,#eee),color-stop(100%,#f4f4f4));background:-webkit-linear-gradient(top,#fff 20%,#f6f6f6 50%,#eee 52%,#f4f4f4 100%);background:-moz-linear-gradient(top,#fff 20%,#f6f6f6 50%,#eee 52%,#f4f4f4 100%);background:-o-linear-gradient(top,#fff 20%,#f6f6f6 50%,#eee 52%,#f4f4f4 100%);background:linear-gradient(top,#fff 20%,#f6f6f6 50%,#eee 52%,#f4f4f4 100%);background-clip:padding-box;box-shadow:0 0 3px #fff inset,0 1px 1px rgba(0,0,0,.1);color:#444;text-decoration:none;white-space:nowrap;line-height:24px}.chosen-container-single .chosen-default{color:#999}.chosen-container-single .chosen-single span{display:block;overflow:hidden;margin-right:26px;text-overflow:ellipsis;white-space:nowrap}.chosen-container-single .chosen-single-with-deselect span{margin-right:38px}.chosen-container-single .chosen-single abbr{position:absolute;top:6px;right:26px;display:block;width:12px;height:12px;background:url(chosen-sprite.png) -42px 1px no-repeat;font-size:1px}.chosen-container-single .chosen-single abbr:hover{background-position:-42px -10px}.chosen-container-single.chosen-disabled .chosen-single abbr:hover{background-position:-42px -10px}.chosen-container-single .chosen-single div{position:absolute;top:0;right:0;display:block;width:18px;height:100%}.chosen-container-single .chosen-single div b{display:block;width:100%;height:100%;background:url(chosen-sprite.png) no-repeat 0 2px}.chosen-container-single .chosen-search{position:relative;z-index:1010;margin:0;padding:3px 4px;white-space:nowrap}.chosen-container-single .chosen-search input[type=text]{margin:1px 0;padding:4px 20px 4px 5px;width:100%;height:auto;outline:0;border:1px solid #aaa;background:#fff url(chosen-sprite.png) no-repeat 100% -20px;background:url(chosen-sprite.png) no-repeat 100% -20px;font-size:1em;font-family:sans-serif;line-height:normal;border-radius:0}.chosen-container-single .chosen-drop{margin-top:-1px;border-radius:0 0 4px 4px;background-clip:padding-box}.chosen-container-single.chosen-container-single-nosearch .chosen-search{position:absolute;left:-9999px}.chosen-container .chosen-results{color:#444;position:relative;overflow-x:hidden;overflow-y:auto;margin:0 4px 4px 0;padding:0 0 0 4px;max-height:240px;-webkit-overflow-scrolling:touch}.chosen-container .chosen-results li{display:none;margin:0;padding:5px 6px;list-style:none;line-height:15px;word-wrap:break-word;-webkit-touch-callout:none}.chosen-container .chosen-results li.active-result{display:list-item;cursor:pointer}.chosen-container .chosen-results li.disabled-result{display:list-item;color:#ccc;cursor:default}.chosen-container .chosen-results li.highlighted{background-color:#3875d7;background-image:-webkit-gradient(linear,50% 0,50% 100%,color-stop(20%,#3875d7),color-stop(90%,#2a62bc));background-image:-webkit-linear-gradient(#3875d7 20%,#2a62bc 90%);background-image:-moz-linear-gradient(#3875d7 20%,#2a62bc 90%);background-image:-o-linear-gradient(#3875d7 20%,#2a62bc 90%);background-image:linear-gradient(#3875d7 20%,#2a62bc 90%);color:#fff}.chosen-container .chosen-results li.no-results{color:#777;display:list-item;background:#f4f4f4}.chosen-container .chosen-results li.group-result{display:list-item;font-weight:700;cursor:default}.chosen-container .chosen-results li.group-option{padding-left:15px}.chosen-container .chosen-results li em{font-style:normal;text-decoration:underline}.chosen-container-multi .chosen-choices{position:relative;overflow:hidden;margin:0;padding:0 5px;width:100%;height:auto!important;height:1%;border:1px solid #aaa;background-color:#fff;background-image:-webkit-gradient(linear,50% 0,50% 100%,color-stop(1%,#eee),color-stop(15%,#fff));background-image:-webkit-linear-gradient(#eee 1%,#fff 15%);background-image:-moz-linear-gradient(#eee 1%,#fff 15%);background-image:-o-linear-gradient(#eee 1%,#fff 15%);background-image:linear-gradient(#eee 1%,#fff 15%);cursor:text}.chosen-container-multi .chosen-choices li{float:left;list-style:none}.chosen-container-multi .chosen-choices li.search-field{margin:0;padding:0;white-space:nowrap}.chosen-container-multi .chosen-choices li.search-field input[type=text]{margin:1px 0;padding:0;height:25px;outline:0;border:0!important;background:transparent!important;box-shadow:none;color:#999;font-size:100%;font-family:sans-serif;line-height:normal;border-radius:0}.chosen-container-multi .chosen-choices li.search-choice{position:relative;margin:3px 5px 3px 0;padding:3px 20px 3px 5px;border:1px solid #aaa;max-width:100%;border-radius:3px;background-color:#eee;background-image:-webkit-gradient(linear,50% 0,50% 100%,color-stop(20%,#f4f4f4),color-stop(50%,#f0f0f0),color-stop(52%,#e8e8e8),color-stop(100%,#eee));background-image:-webkit-linear-gradient(#f4f4f4 20%,#f0f0f0 50%,#e8e8e8 52%,#eee 100%);background-image:-moz-linear-gradient(#f4f4f4 20%,#f0f0f0 50%,#e8e8e8 52%,#eee 100%);background-image:-o-linear-gradient(#f4f4f4 20%,#f0f0f0 50%,#e8e8e8 52%,#eee 100%);background-image:linear-gradient(#f4f4f4 20%,#f0f0f0 50%,#e8e8e8 52%,#eee 100%);background-size:100% 19px;background-repeat:repeat-x;background-clip:padding-box;box-shadow:0 0 2px #fff inset,0 1px 0 rgba(0,0,0,.05);color:#333;line-height:13px;cursor:default}.chosen-container-multi .chosen-choices li.search-choice span{word-wrap:break-word}.chosen-container-multi .chosen-choices li.search-choice .search-choice-close{position:absolute;top:4px;right:3px;display:block;width:12px;height:12px;background:url(chosen-sprite.png) -42px 1px no-repeat;font-size:1px}.chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover{background-position:-42px -10px}.chosen-container-multi .chosen-choices li.search-choice-disabled{padding-right:5px;border:1px solid #ccc;background-color:#e4e4e4;background-image:-webkit-gradient(linear,50% 0,50% 100%,color-stop(20%,#f4f4f4),color-stop(50%,#f0f0f0),color-stop(52%,#e8e8e8),color-stop(100%,#eee));background-image:-webkit-linear-gradient(top,#f4f4f4 20%,#f0f0f0 50%,#e8e8e8 52%,#eee 100%);background-image:-moz-linear-gradient(top,#f4f4f4 20%,#f0f0f0 50%,#e8e8e8 52%,#eee 100%);background-image:-o-linear-gradient(top,#f4f4f4 20%,#f0f0f0 50%,#e8e8e8 52%,#eee 100%);background-image:linear-gradient(top,#f4f4f4 20%,#f0f0f0 50%,#e8e8e8 52%,#eee 100%);color:#666}.chosen-container-multi .chosen-choices li.search-choice-focus{background:#d4d4d4}.chosen-container-multi .chosen-choices li.search-choice-focus .search-choice-close{background-position:-42px -10px}.chosen-container-multi .chosen-results{margin:0;padding:0}.chosen-container-multi .chosen-drop .result-selected{display:list-item;color:#ccc;cursor:default}.chosen-container-active .chosen-single{border:1px solid #5897fb;box-shadow:0 0 5px rgba(0,0,0,.3)}.chosen-container-active.chosen-with-drop .chosen-single{border:1px solid #aaa;-moz-border-radius-bottomright:0;border-bottom-right-radius:0;-moz-border-radius-bottomleft:0;border-bottom-left-radius:0;background-image:-webkit-gradient(linear,50% 0,50% 100%,color-stop(20%,#eee),color-stop(80%,#fff));background-image:-webkit-linear-gradient(#eee 20%,#fff 80%);background-image:-moz-linear-gradient(#eee 20%,#fff 80%);background-image:-o-linear-gradient(#eee 20%,#fff 80%);background-image:linear-gradient(#eee 20%,#fff 80%);box-shadow:0 1px 0 #fff inset}.chosen-container-active.chosen-with-drop .chosen-single div{border-left:0;background:transparent}.chosen-container-active.chosen-with-drop .chosen-single div b{background-position:-18px 2px}.chosen-container-active .chosen-choices{border:1px solid #5897fb;box-shadow:0 0 5px rgba(0,0,0,.3)}.chosen-container-active .chosen-choices li.search-field input[type=text]{color:#222!important}.chosen-disabled{opacity:.5!important;cursor:default}.chosen-disabled .chosen-single{cursor:default}.chosen-disabled .chosen-choices .search-choice .search-choice-close{cursor:default}.chosen-rtl{text-align:right}.chosen-rtl .chosen-single{overflow:visible;padding:0 8px 0 0}.chosen-rtl .chosen-single span{margin-right:0;margin-left:26px;direction:rtl}.chosen-rtl .chosen-single-with-deselect span{margin-left:38px}.chosen-rtl .chosen-single div{right:auto;left:3px}.chosen-rtl .chosen-single abbr{right:auto;left:26px}.chosen-rtl .chosen-choices li{float:right}.chosen-rtl .chosen-choices li.search-field input[type=text]{direction:rtl}.chosen-rtl .chosen-choices li.search-choice{margin:3px 5px 3px 0;padding:3px 5px 3px 19px}.chosen-rtl .chosen-choices li.search-choice .search-choice-close{right:auto;left:4px}.chosen-rtl.chosen-container-single-nosearch .chosen-search,.chosen-rtl .chosen-drop{left:9999px}.chosen-rtl.chosen-container-single .chosen-results{margin:0 0 4px 4px;padding:0 4px 0 0}.chosen-rtl .chosen-results li.group-option{padding-right:15px;padding-left:0}.chosen-rtl.chosen-container-active.chosen-with-drop .chosen-single div{border-right:0}.chosen-rtl .chosen-search input[type=text]{padding:4px 5px 4px 20px;background:#fff url(chosen-sprite.png) no-repeat -30px -20px;background:url(chosen-sprite.png) no-repeat -30px -20px;direction:rtl}.chosen-rtl.chosen-container-single .chosen-single div b{background-position:6px 2px}.chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b{background-position:-12px 2px}@media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-resolution:144dpi){.chosen-rtl .chosen-search input[type=text],.chosen-container-single .chosen-single abbr,.chosen-container-single .chosen-single div b,.chosen-container-single .chosen-search input[type=text],.chosen-container-multi .chosen-choices .search-choice .search-choice-close,.chosen-container .chosen-results-scroll-down span,.chosen-container .chosen-results-scroll-up span{background-image:url(chosen-sprite@2x.png)!important;background-size:52px 37px!important;background-repeat:no-repeat!important}}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+
+ */
+/* line 1, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/alerts.scss */
+.error {
+  color: #ad2600;
+  border: 2px solid #ad2600;
+  padding: .5rem;
+  margin: .25rem .25rem 2rem;
+  z-index: 500;
+  width: 80%;
+  float: right;
+  text-align: center;
+}
+
+/* line 5, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/alerts.scss */
+.alert {
+  color: #e68a00;
+  border: 2px solid #e68a00;
+  padding: .5rem;
+  margin: .25rem .25rem 2rem;
+  z-index: 500;
+  width: 80%;
+  float: right;
+  text-align: center;
+}
+
+/* line 9, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/alerts.scss */
+.notice {
+  color: #95cb15;
+  border: 2px solid #95cb15;
+  padding: .5rem;
+  margin: .25rem .25rem 2rem;
+  z-index: 500;
+  width: 80%;
+  float: right;
+  text-align: center;
+}
+
+/* line 2, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/forms.scss */
+.main form:not(.button_to) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  background: white;
+  padding: 2rem 2rem 4rem;
+  box-shadow: #bbbbbb 0 0px 20px -1px;
+  -webkit-box-shadow: #bbbbbb 0 0px 20px -1px;
+}
+/* line 11, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/forms.scss */
+.main form:not(.button_to) h2 {
+  padding: 0px 0px 10px 40px;
+  display: block;
+  border-bottom: 1px solid #F5F5F5;
+  margin: -10px -30px 10px -30px;
+  color: #969696;
+}
+/* line 18, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/forms.scss */
+.main form:not(.button_to) fieldset {
+  display: block;
+  margin: 0.75rem 0 0.75rem;
+  border: none;
+}
+/* line 23, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/forms.scss */
+.main form:not(.button_to) label {
+  float: left;
+  width: 20%;
+  text-align: right;
+  padding-right: 10px;
+}
+/* line 29, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/forms.scss */
+.main form:not(.button_to) input[type="text"], .main form:not(.button_to) input[type="email"], .main form:not(.button_to) input[type="password"], .main form:not(.button_to) textarea, .main form:not(.button_to) select {
+  color: #999999;
+  width: 70%;
+  text-align: left;
+  padding: 3px 0px 3px 5px;
+  border: 1px solid #999999;
+  background: #fbfbfb;
+  outline: 0;
+  -webkit-box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.2);
+  box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.2);
+}
+/* line 40, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/forms.scss */
+.main form:not(.button_to) input[type="submit"] {
+  clear: both;
+  float: right;
+  background: #95cb15;
+  color: black;
+  font-size: 1rem;
+  padding: .35rem 1rem .35rem 1rem;
+  text-decoration: none;
+  margin: 0.25rem;
+  border: 1px solid #95cb15;
+  border-radius: 6px;
+}
+/* line 27, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/_mixins.scss */
+.main form:not(.button_to) input[type="submit"]:hover {
+  background: #87b514;
+  text-decoration: none;
+  color: white;
+  border: 1px solid black;
+}
+/* line 45, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/forms.scss */
+.main form:not(.button_to) ::-webkit-input-placeholder {
+  font-size: 1.25em;
+  padding-right: .25em;
+}
+/* line 49, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/forms.scss */
+.main form:not(.button_to) :-moz-placeholder {
+  font-size: 1.25em;
+  padding-right: .25em;
+}
+/* line 53, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/forms.scss */
+.main form:not(.button_to) ::-moz-placeholder {
+  font-size: 1.25em;
+  padding-right: .25em;
+}
+/* line 57, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/forms.scss */
+.main form:not(.button_to) :-ms-input-placeholder {
+  font-size: 1.25em;
+  padding-right: .25em;
+}
+/* line 61, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/forms.scss */
+.main form:not(.button_to) textarea {
+  height: 100px;
+  padding: 5px 0px 0px 5px;
+}
+/* line 65, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/forms.scss */
+.main form:not(.button_to) small {
+  color: #999999;
+  float: right;
+}
+/* line 69, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/forms.scss */
+.main form:not(.button_to) .chosen-choices, .main form:not(.button_to) .chosen-results {
+  left: 0;
+}
+
+/* line 74, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/forms.scss */
+#error_explanation:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 80, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/forms.scss */
+#error_explanation li {
+  color: #ad2600;
+}
+
+/* line 4, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Arial, Helvetica, 'Liberation Sans', sans-serif;
+}
+
+/* line 11, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+* :not(p) {
+  font-weight: bold;
+}
+
+/* line 15, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 22, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 30, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+.wrapper {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/*clearfix*/
+/* line 41, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+.clearfix:after,
+.wrapper:after,
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 47, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+[class*='column-'] {
+  float: left;
+  padding-right: .5em;
+  width: 100%;
+  min-height: 1px;
+  height: 100%;
+}
+
+/*removes padding from far right column*/
+/* line 56, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+[class*='column-']:last-of-type {
+  padding-right: 0;
+}
+
+/*optional outside gutters*/
+/*add padding to grid parent*/
+/* line 61, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+.grid-pad {
+  padding: .5em 0 .5em .5em;
+}
+
+/*restore right padding to last column*/
+/* line 66, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+.grid-pad > [class*='column-']:last-of-type {
+  padding-right: .5em;
+}
+
+/*will have columns on screens larger than 30ems*/
+@media only screen and (min-width: 30em) {
+  /* line 72, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+  .wrapper {
+    width: 100%;
+    max-width: 1500px;
+    height: 100%;
+  }
+
+  /* line 77, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+  .column-1 {
+    width: 8.56%;
+  }
+
+  /* line 80, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+  .column-2 {
+    width: 18.72%;
+  }
+
+  /* line 83, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+  .column-3 {
+    width: 28.88%;
+  }
+
+  /* line 86, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+  .column-4 {
+    width: 39.04%;
+  }
+
+  /* line 89, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+  .column-5 {
+    width: 49.2%;
+  }
+
+  /* line 92, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+  .column-6 {
+    width: 59.36%;
+  }
+
+  /* line 95, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+  .column-7 {
+    width: 69.52%;
+  }
+
+  /* line 98, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+  .column-8 {
+    width: 79.68%;
+  }
+
+  /* line 101, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+  .column-9 {
+    width: 89.84%;
+  }
+
+  /* line 104, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/grid.scss */
+  .column-10 {
+    width: 100%;
+  }
+}
+@media print {
+  /* line 2, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/print.scss */
+  header {
+    display: none;
+  }
+
+  /* line 6, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/print.scss */
+  div.column-2 {
+    display: none;
+  }
+
+  /* line 10, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/print.scss */
+  div.column-6 {
+    width: 100%;
+    overflow: visible;
+  }
+
+  /* line 14, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/print.scss */
+  .gray {
+    overflow: visible;
+  }
+
+  /* line 18, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/print.scss */
+  table.index.tablesorter {
+    border: none;
+    width: 100%;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  /* line 27, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/print.scss */
+  .wrapper {
+    height: auto;
+    overflow: visible;
+  }
+}
+/*left side area styles*/
+/* line 3, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/non-main.scss */
+.left-content {
+  margin-top: 6rem;
+  text-align: right;
+}
+/* line 6, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/non-main.scss */
+.left-content h2 {
+  font-size: 2.5em;
+  color: black;
+}
+/* line 10, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/non-main.scss */
+.left-content a:hover {
+  color: #95cb15;
+  font-size: 110%;
+  border: none;
+}
+/* line 15, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/non-main.scss */
+.left-content .large-icon {
+  font-size: 2.5rem;
+  display: block;
+}
+/* line 19, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/non-main.scss */
+.left-content .large-icon:hover {
+  color: #e68a00;
+  font-size: 2.5rem;
+}
+/* line 23, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/non-main.scss */
+.left-content .fa:hover {
+  border-bottom: 1px black solid;
+}
+/* line 26, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/non-main.scss */
+.left-content .fa-home {
+  font-size: 1.25em;
+}
+
+/*search form*/
+/* line 32, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/non-main.scss */
+.left-content form {
+  padding-top: 2em;
+  padding-bottom: 3em;
+}
+/* line 35, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/non-main.scss */
+.left-content form input[type="submit"] {
+  font-size: 2.5em;
+  text-align: right;
+  background: none;
+  border: none;
+}
+/* line 41, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/non-main.scss */
+.left-content form input[type="submit"]:hover {
+  color: #95cb15;
+}
+/* line 44, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/non-main.scss */
+.left-content form input[type="text"] {
+  text-align: right;
+  height: 2em;
+  width: 80%;
+  padding: .5em;
+  font-size: 1em;
+}
+/* line 51, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/non-main.scss */
+.left-content form label {
+  visibility: hidden;
+}
+
+/*right side styles*/
+/* line 57, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/non-main.scss */
+.column-2 {
+  position: relative;
+}
+
+/* line 60, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/non-main.scss */
+span.vertical {
+  font-size: 6em;
+  color: #e8e8e8;
+  display: inline-block;
+  position: fixed;
+  top: -.75em;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform-origin: bottom left;
+}
+
+/* line 2, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/shared.scss */
+.main {
+  height: 100%;
+  max-height: 100%;
+  overflow: auto;
+  padding-top: 2em;
+  background: #d6d6d6;
+}
+
+/* line 10, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/shared.scss */
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 16, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/shared.scss */
+h1 {
+  color: #9c9c9c;
+  font-size: 4.5em;
+  text-align: center;
+  text-transform: none;
+}
+
+/* line 23, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/shared.scss */
+h2 {
+  font-size: 2.5em;
+  color: #999999;
+  text-transform: none;
+}
+
+/* line 29, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/shared.scss */
+.ignore-caps {
+  text-transform: none;
+}
+
+/* line 33, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/shared.scss */
+nav {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+/* line 37, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/shared.scss */
+nav ul {
+  clear: left;
+  float: left;
+  list-style: none;
+  position: relative;
+  left: 50%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+/* line 46, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/shared.scss */
+nav ul li {
+  display: block;
+  float: left;
+  position: relative;
+  right: 50%;
+  font-size: .8em;
+  padding-left: .75em;
+  padding-top: .75em;
+  font-weight: 500;
+}
+/* line 55, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/shared.scss */
+nav ul li::first-of-type {
+  padding-left: 0;
+}
+/* line 58, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/shared.scss */
+nav ul li > a:hover {
+  color: #E68A00;
+  border-bottom: 1px solid black;
+}
+
+/* line 66, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/shared.scss */
+.main article {
+  margin: 5em 6em;
+  height: 100%;
+}
+
+/* line 71, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/shared.scss */
+.main p {
+  margin: 1em 0;
+  font-weight: normal;
+  text-transform: none;
+}
+
+/* line 77, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/shared.scss */
+.right {
+  float: right;
+}
+
+/* line 82, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/shared.scss */
+td, td > a {
+  font-weight: normal;
+}
+
+/* line 86, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/shared.scss */
+td > a:hover {
+  color: black;
+  border-bottom: 1px solid black;
+}
+
+/* line 93, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/shared.scss */
+.clear {
+  clear: both;
+}
+
+/* line 95, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/shared.scss */
+.dashboard-links {
+  line-height: 2rem;
+}
+
+/* line 1, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/users.scss */
+#username {
+  color: #666666;
+}
+
+/* line 5, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/users.scss */
+.show {
+  padding: .75em;
+  margin-top: 3.0em;
+  margin-bottom: 1em;
+  width: 85%;
+  border: 1px black solid;
+  background-color: #F5F5F5;
+}
+
+/* line 14, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/users.scss */
+.show > ul {
+  float: none;
+  list-style: none;
+  position: static;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* line 1, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/search.scss */
+.search-results {
+  padding-bottom: 2rem;
+  margin-left: 2rem;
+}
+
+/* line 6, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/search.scss */
+li.results {
+  list-style: none;
+}
+/* line 8, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/search.scss */
+li.results:before {
+  content: "\f006";
+  font-family: FontAwesome;
+  font-size: 0.75rem;
+  color: #e68a00;
+  padding-right: 0.75rem;
+}
+
+/* line 3, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/buttons.scss */
+.btn {
+  font-size: 1.5em;
+  background: none;
+  border: none;
+}
+
+/* line 9, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/buttons.scss */
+.btn:hover, a:hover {
+  color: #95cb15;
+  border-bottom: 1px solid black;
+}
+
+/* line 14, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/buttons.scss */
+.go-btn {
+  background: #95cb15;
+  color: black;
+  font-size: 1rem;
+  padding: .35rem 1rem .35rem 1rem;
+  text-decoration: none;
+  margin: 0.25rem;
+  border: 1px solid #95cb15;
+  border-radius: 6px;
+}
+/* line 27, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/_mixins.scss */
+.go-btn:hover {
+  background: #87b514;
+  text-decoration: none;
+  color: white;
+  border: 1px solid black;
+}
+
+/* line 18, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/buttons.scss */
+.meh-btn {
+  background: #999999;
+  color: black;
+  font-size: 1rem;
+  padding: .35rem 1rem .35rem 1rem;
+  text-decoration: none;
+  margin: 0.25rem;
+  border: 1px solid #999999;
+  border-radius: 6px;
+}
+/* line 27, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/_mixins.scss */
+.meh-btn:hover {
+  background: #6b6b6b;
+  text-decoration: none;
+  color: white;
+  border: 1px solid black;
+}
+
+/* line 22, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/buttons.scss */
+.danger-btn {
+  background: #e68a00;
+  color: black;
+  font-size: 1rem;
+  padding: .35rem 1rem .35rem 1rem;
+  text-decoration: none;
+  margin: 0.25rem;
+  border: 1px solid #e68a00;
+  border-radius: 6px;
+}
+/* line 27, C:/Users/bby0498/Projects/GCLibraryCollection/app/assets/stylesheets/_mixins.scss */
+.danger-btn:hover {
+  background: #e11414;
+  text-decoration: none;
+  color: white;
+  border: 1px solid black;
+}

@@ -4,7 +4,42 @@ require 'support/api_utilities'
 
 describe SearchController do
 
+  before do 
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.start
+    @user = create :user
+    @librarian = create :librarian
+  end 
+
+  before(:each) do
+    request.env["HTTP_REFERER"] = root_path
+  end
+
+  after do 
+    DatabaseCleaner.clean
+  end 
+
+  after :each do 
+    Warden.test_reset! 
+  end 
+
   describe '#search' do
+
+    before { sign_in @librarian }
+
+    context 'as librarian' do
+      it 'returns results for user terms' do
+        get :search, "search" => @user.name
+        response.should be_ok
+        expect(assigns[:users]).to include(@user)
+      end
+    end
+
+    it 'does not return results for user search terms' do
+      get :search, "search" => @user.name
+      response.should be_ok
+      expect(assigns).to_not include(:user)
+    end
 
     it 'returns results for good search terms' do
       keyword = FactoryGirl.create(:keyword)

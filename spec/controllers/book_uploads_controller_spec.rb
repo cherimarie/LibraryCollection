@@ -44,7 +44,7 @@ describe BookUploadsController do
 
       it 'flashes error' do
         post :create, book_upload: { genre: nil, file: nil }
-        expect(flash[:alert]).to eq "Please select a file and genre"
+        expect(flash[:alert]).to eq "Please select a file and category"
       end
     end
 
