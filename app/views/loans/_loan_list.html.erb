@@ -43,13 +43,12 @@
           <% end %>
         </td>
 
-        <td><%= l.renewal_count %></td>
-
-        <% if !l.returned_date && (l.renewal_count < Loan::MAX_RENEWALS) && @librarian_user %>
-          <td>
+        <td>
+          <%= l.renewal_count %>
+          <% if !l.returned_date && (l.renewal_count < Loan::MAX_RENEWALS) && @librarian_user %>
             <%= button_to 'renew now', renew_path(id: l.id), data: {confirm: "Are you sure you want to renew this loan?"} %>
-          </td>
-        <% end %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
