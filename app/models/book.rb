@@ -41,8 +41,9 @@ class Book < ActiveRecord::Base
     alpha_author = authors.first
 
     book_authors.each do |b|
-      return Author.find(b.author_id) if b.primary
-      author = Author.find(b.author_id)
+      return Author.find_by(id: b.author_id) if b.primary
+      author = Author.find_by(id: b.author_id)
+      return nil unless author
       alpha_author = author if author.sort_by < alpha_author.sort_by
     end
     return alpha_author

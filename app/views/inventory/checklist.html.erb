@@ -26,7 +26,7 @@
       <tr class="<%= 'complete' if book.inventoried %>">
         <td><span class="<%= 'unavailable' if !book.available %>" title="unavailable"></span></td>
         <td><%=  link_to "edit", edit_book_path(book), target: "_blank" %></td>
-        <td><%= book.primary_author.display_name %></td>
+        <td><%= book.primary_author.try(:display_name) %></td>
         <td><input type="text" value="<%= book.title %>" class="book_<%= book.id %>" name="title"></td>
         <td><input type="text" value="<%= book.isbn %>" class="book_<%= book.id %>" name="isbn"></td>
         <td><input type="text" value="<%= book.publish_date %>" class="book_<%= book.id %>" name="publish_date"></td>
