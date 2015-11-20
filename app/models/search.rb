@@ -7,29 +7,52 @@ class Search
       return book
     end
 
+    scraped_data = []
     google_info = google_api(isbn)
-    return nil if google_info == nil
+    scraped_data << google_info if google_info
+    good_reads_info = good_reads_api(isbn)
+    scraped_data << good_reads_info if good_reads_info
+    world_cat_info = world_cat_api(isbn)
+    scraped_data << world_cat_info if world_cat_info
 
+    return nil if scraped_data.empty?
+
+    joined_hash = join_hashes(scraped_data)
+    return create_book(joined_hash, isbn)
+  end
+
+  private
+
+  def self.join_hashes(hashes)
+    main_hash = hashes.shift
+    unless hashes.empty?
+      hashes.each do |data|
+        data.keys.each do |key|
+          main_hash[key] = data[key] unless main_hash[key]
+        end
+      end
+    end
+
+    return main_hash
+  end
+
+  def self.create_book(book_info, isbn)
     b = Book.new
-    b.title = google_info["title"]
-    b.publisher = google_info["publisher"]
-    b.publish_date = google_info["publishedDate"]
-    b.language = google_info["lang"]
-    b.pages = google_info["pageCount"]
+    b.title = book_info["title"]
+    b.publisher = book_info["publisher"]
+    b.publish_date = book_info["publish_date"]
+    b.language = book_info["language"]
+    b.pages = book_info["pages"]
     b.isbn = isbn
-    b.save!
-    authors = google_info["authors"]
+    authors = book_info["authors"]
     if authors
       authors.each do |name|
         a = Author.find_or_create_by(name: name)
         BookAuthor.create(author: a, book: b)
       end
     end
-
-    return b
+    b.save!
   end
-
-  private
 
   #preferred method; has most important fields
   def self.google_api(isbn)
@@ -57,7 +80,26 @@ class Search
     return google_info
   end
 
-  #not the best, authors is non-standardized - can't be parsed
+  def self.good_reads_api(isbn)
+    url = URI.parse("https://www.goodreads.com/search.xml?key=#{ENV['good_reads_api_key']}=&q=#{isbn}")
+    req = Net::HTTP::Get.new(url.to_s)
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    response = http.request(req)
+    body = response.body
+    temp_hash = Hash.from_xml(body)
+
+    book_hash = temp_hash['GoodreadsResponse']['search']['results']['work']
+
+    good_reads_info = Hash.new
+    good_reads_info['publish_date'] = book_hash['original_publication_year']
+    good_reads_info['title'] = book_hash['best_book']['title']
+    good_reads_info['title'] = book_hash['best_book']['title']
+    good_reads_info['authors'] = [book_hash['best_book']['author']['name']]
+    
+    return good_reads_info
+  end
+
   def self.world_cat_api(isbn)
     url = URI.parse("http://xisbn.worldcat.org/webservices/xid/isbn/#{isbn}?method=getMetadata&format=json&fl=*")
     req = Net::HTTP::Get.new(url.to_s)
