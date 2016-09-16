@@ -4,7 +4,7 @@
 
   <%= l.label :user_id %>
 
-  <%= collection_select(:loan, :user_id, User.all, :id, :name, { disabled: -> (user) { !user.good_to_borrow? }}) %>
+  <%= collection_select(:loan, :user_id, User.all, :id, :name, { disabled: -> (user) { !user.good_to_borrow? }}, { class: "chosen-select" }) %>
 
   <%= l.submit "submit" %>
 
