@@ -3,7 +3,8 @@
   <%= l.hidden_field :book_id %>
 
   <%= l.label :user_id %>
-  <%= l.select :user_id, User.able_to_borrow.collect { |u| [u.name, u.id] }, {}, multiple: false, class: "chosen-select" %>
+
+  <%= collection_select(:loan, :user_id, User.all, :id, :name, { disabled: -> (user) { !user.good_to_borrow? }}) %>
 
   <%= l.submit "submit" %>
 
