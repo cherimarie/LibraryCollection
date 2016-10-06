@@ -1,7 +1,7 @@
 class OverdueMailer < ActionMailer::Base
   default from: "from@example.com"
 
-  @last_sent = Date.new(2000,1,1)
+  @last_sent = @last_sent || Date.new(2000,1,1)
 
   class << self
     attr_accessor :last_sent
